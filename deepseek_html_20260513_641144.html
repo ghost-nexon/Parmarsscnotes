@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salient Features of Indian Constitution – Mind Map</title>
+<style>
+:root{
+  --bg:#0d0f1a;--s:#141726;--card:#1a1e30;--border:#252a42;
+  --gold:#f5c842;--orange:#ff7c3a;--blue:#4fa3f7;--green:#3ecf8e;
+  --pink:#f06fa4;--purple:#9b7bf7;--teal:#2dd4bf;--text:#e8ecf5;--muted:#8892a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.6}
+.header{background:linear-gradient(135deg,#1a1030,#0d1a2e);border-bottom:2px solid var(--gold);padding:28px 20px 20px;text-align:center}
+.header h1{font-size:clamp(20px,5vw,34px);font-weight:800;color:#fff}
+.header h1 span{color:var(--gold)}
+.header p{color:var(--muted);font-size:12px;margin-top:6px}
+.controls{display:flex;gap:8px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--border);align-items:center}
+.controls input{flex:1;min-width:160px;padding:7px 12px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px}
+.controls input::placeholder{color:var(--muted)}
+.btn{padding:6px 14px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--muted);cursor:pointer;font-size:12px;transition:.15s}
+.btn:hover{background:var(--border);color:var(--text)}
+.tree{padding:12px 16px 40px}
+ul{list-style:none;padding:0}
+.children{padding-left:20px;border-left:1px solid var(--border);margin-left:8px;margin-top:2px}
+.children.closed{display:none}
+.row{display:flex;align-items:flex-start;gap:0;padding:2px 0;cursor:pointer;border-radius:6px;transition:background .12s}
+.row:hover{background:rgba(255,255,255,.04)}
+.arrow{width:18px;min-width:18px;font-size:10px;color:var(--muted);padding-top:4px;text-align:center;transition:transform .15s;flex-shrink:0}
+.arrow.open{transform:rotate(90deg)}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px 3px 6px;border-radius:20px;font-size:13px;flex-wrap:wrap;line-height:1.5}
+.badge{font-size:10px;font-weight:700;padding:1px 6px;border-radius:10px;white-space:nowrap}
+.b-imp{background:rgba(245,200,66,.2);color:var(--gold)}
+.b-key{background:rgba(79,163,247,.2);color:var(--blue)}
+.b-warn{background:rgba(240,111,164,.2);color:var(--pink)}
+.b-ok{background:rgba(62,207,142,.2);color:var(--green)}
+.l0 .pill{background:var(--card);border:1.5px solid var(--gold);font-size:15px;font-weight:700;color:#fff}
+.lp .pill{background:rgba(155,123,247,.1);border:0.5px solid var(--purple);color:var(--purple)}
+.lt .pill{background:rgba(45,212,191,.1);border:0.5px solid var(--teal);color:var(--teal)}
+.la .pill{background:rgba(255,124,58,.1);border:0.5px solid var(--orange);color:var(--orange)}
+.lc .pill{background:rgba(240,111,164,.1);border:0.5px solid var(--pink);color:var(--pink)}
+.lb .pill{background:rgba(79,163,247,.1);border:0.5px solid var(--blue);color:var(--blue)}
+.lg .pill{background:rgba(62,207,142,.1);border:0.5px solid var(--green);color:var(--green)}
+.lr .pill{background:rgba(245,200,66,.1);border:0.5px solid var(--gold);color:var(--gold)}
+.l2 .pill,.l3 .pill{background:transparent;border:none;color:var(--text);padding-left:2px;font-size:13px;font-weight:400}
+.l3 .pill{color:var(--muted);font-size:12px}
+.hl .pill{background:rgba(245,200,66,.08)!important;border:1px solid var(--gold)!important}
+.dim{opacity:.25}
+mark{background:rgba(245,200,66,.3);border-radius:2px;color:var(--text)}
+.back-link {
+  padding: 12px 16px 0 16px;
+}
+.back-link a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-link a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<div class="back-link">
+  <p><a href="index.html">← Back to Table of Contents</a></p>
+</div>
+<div class="header">
+  <h1>Salient Features of <span>Indian Constitution</span></h1>
+  <p>SSC CGL · CHSL · MTS · NTPC · Group D · UPSC — Complete Mind Map | Click nodes to expand · Search to filter</p>
+</div>
+<div class="controls">
+  <input type="text" id="srch" placeholder="🔍 Search any fact, date, schedule, feature…" oninput="search(this.value)">
+  <button class="btn" onclick="setAll(true)">▼ Expand All</button>
+  <button class="btn" onclick="setAll(false)">▲ Collapse All</button>
+</div>
+<div class="tree"><ul id="root"></ul></div>
+
+<script>
+const T=[
+ {l:"📜 Salient Features of Indian Constitution",c:"l0",o:1,ch:[
+
+  {l:"1️⃣ Lengthiest Written Constitution in the World",c:"lp",o:1,ch:[
+   {l:"Original Constitution: 395 Articles | 22 Parts | 8 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Present Constitution: 448 Articles | 25 Parts | 12 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Part 7 deleted | New parts added: IV-A, IX-A, IX-B, XIV-A",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Written vs Unwritten Constitution",c:"l2",ch:[
+    {l:"Written — Compiled, structured, formally constituted, NOT easy to amend | Example: India",c:"l3"},
+    {l:"Unwritten — Not structured, not formally constituted, Easy to amend | Example: United Kingdom",c:"l3"}
+   ]},
+   {l:"Amendment = Formal change to law, contract, constitution or other legal document",c:"l2"}
+  ]},
+
+  {l:"2️⃣ Parliamentary Form of Government",c:"lt",o:1,ch:[
+   {l:"Party winning most seats in national election forms ruling government",c:"l2"},
+   {l:"Borrowed from: United Kingdom",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Executive is directly accountable to the Legislature",c:"l2"}
+  ]},
+
+  {l:"3️⃣ Federation with Strong Centre",c:"la",o:1,ch:[
+   {l:"Federalism = more than one level of government in the country",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Three-tier govt in India: Union/Centre + States + Local Bodies",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"States derive authority from Constitution itself — NOT merely agents of federal govt",c:"l2"},
+   {l:"Federal Features",c:"l2",ch:[
+    {l:"Written Constitution",c:"l3"},
+    {l:"Supremacy of the Constitution",c:"l3"},
+    {l:"Rigidity of Constitution",c:"l3"},
+    {l:"Independence of Judiciary",c:"l3"},
+    {l:"Bicameralism",c:"l3"},
+    {l:"Dual Government",c:"l3"}
+   ]},
+   {l:"Unitary Features",c:"l2",ch:[
+    {l:"Single Constitution",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Single Citizenship",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Integrated Judiciary",c:"l3"},
+    {l:"All India Services",c:"l3"},
+    {l:"Emergency Provisions",c:"l3"},
+    {l:"Appointment of Governors by Centre",c:"l3",b:[{t:"KEY",s:"b-key"}]}
+   ]},
+   {l:"Comments on Indian Federalism",c:"l2",ch:[
+    {l:"K.C. Wheare → Quasi Federal",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"Granville Seward Austin → Cooperative Federalism",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"Ivor Jennings → Federalism with centralising tendency",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"Morris Jones → Bargaining Federalism",c:"l3",b:[{t:"KEY",s:"b-key"}]}
+   ]}
+  ]},
+
+  {l:"4️⃣ Separation of Powers",c:"lb",o:0,ch:[
+   {l:"Legislative → Makes Laws",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Executive → Carries Out Laws",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Judiciary → Evaluates Laws",c:"l2",b:[{t:"IMP",s:"b-imp"}]}
+  ]},
+
+  {l:"📋 Schedules of Indian Constitution (12 Total)",c:"lc",o:0,ch:[
+   {l:"Schedule 1 — Names of States, UTs and their territorial jurisdiction",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Schedule 2 — Emoluments and Allowances of President, VP, Governor, Speaker, Deputy Speaker, Chairman, Deputy Chairman, Judges, CAG",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 3 — Oaths and Affirmations (Union+State) of Ministers, MPs, MLAs, Judges, CAG",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 4 — Allocation of Seats in Rajya Sabha",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Schedule 5 — Administration of Scheduled Areas and Scheduled Tribes of AP, Chhattisgarh, Maharashtra, Jharkhand, MP, Gujarat, Himachal Pradesh, Odisha, Rajasthan, Telangana",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Schedule 6 — Administration of tribal areas of Assam, Tripura, Meghalaya, Mizoram",c:"l2",ch:[
+    {l:"Why in news: Ladakh demanding extension of 6th Schedule to protect tribal culture and autonomy",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Entails: Autonomous District Councils (ADCs), Powers of ADCs, Cultural preservation",c:"l3"}
+   ]},
+   {l:"Schedule 7 — Three Lists: Union, State, Concurrent (Federal Provision)",c:"l2",b:[{t:"IMP",s:"b-imp"}],ch:[
+    {l:"Union List — Initially 97, Currently 100 subjects | Defence, Banking, Foreign Affairs, Citizenship, Airways, Atomic Energy, etc.",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"State List — Initially 66, Currently 61 subjects | Public Order, Local Govt, Health, Agriculture, Liquor, Fisheries, Betting, Pilgrimage",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Concurrent List — Initially 47, Currently 52 subjects | Marriage+Divorce, Education, Electricity, Insolvency, Trade Dispute, Weights+Measures",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Residuary List — Subjects NOT in any list | Parliament has power to legislate | Borrowed from Canadian Constitution",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"42nd Amendment 1976 — transferred from State to Concurrent: Education, Forest, Weight+Measures, Protection of Wild Animals+Birds, Administration of Justice",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"5 scenarios when Parliament can legislate on State List subjects",c:"l3",ch:[
+     {l:"1. National Emergency",c:"l3"},
+     {l:"2. President Rule",c:"l3"},
+     {l:"3. Two or more states ask the Centre",c:"l3"},
+     {l:"4. To enforce International Treaty",c:"l3"},
+     {l:"5. If Rajya Sabha gives Parliament this power with Special Majority",c:"l3"}
+    ]}
+   ]},
+   {l:"Schedule 8 — Official Languages",c:"l2",b:[{t:"IMP",s:"b-imp"}],ch:[
+    {l:"Originally 14 languages | Presently 22 languages",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"21st CAA 1967 → Sindhi added",c:"l3"},
+    {l:"71st CAA 1992 → Konkani, Manipuri, Nepali added",c:"l3"},
+    {l:"92nd CAA 2003 → Bodo, Dogri, Santhali, Maithili (BDSM) added",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"96th CAA 2011 → Changed name Oriya to Odia",c:"l3",b:[{t:"KEY",s:"b-key"}]},
+    {l:"Classical Languages (6): Tamil, Sanskrit, Telugu, Kannada, Malayalam, Odia",c:"l3",b:[{t:"IMP",s:"b-imp"}]},
+    {l:"Newly Added Classical Languages 2024: Marathi, Pali, Prakrit, Assamese, Bengali",c:"l3",b:[{t:"IMP",s:"b-imp"}]}
+   ]},
+   {l:"Schedule 9 — Land reforms and Zamindari System | Added by 1st CA: 1951",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Schedule 10 — Disqualification of MPs and MLAs on grounds of Defection | Added by 52nd CA: 1985",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 11 — Panchayat provisions | 73rd CA: 1992 | 29 Functional Matters",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 12 — Municipal provisions | 74th CA: 1992 | 18 Functional Matters",c:"l2",b:[{t:"IMP",s:"b-imp"}]}
+  ]},
+
+  {l:"🔢 Numbers — Quick Reference",c:"la",o:0,ch:[
+   {l:"Original Constitution: 395 Articles + 22 Parts + 8 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Present Constitution: 448 Articles + 25 Parts + 12 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Union List: 97 → 100 subjects | State List: 66 → 61 subjects | Concurrent: 47 → 52 subjects",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 8 Languages: Original 14 → Present 22",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"Schedule 11 (Panchayat): 29 Functional Matters",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Schedule 12 (Municipality): 18 Functional Matters",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Classical Languages original 6 + 5 new in 2024 = 11 total",c:"l2",b:[{t:"IMP",s:"b-imp"}]}
+  ]},
+
+  {l:"👤 Important Scholars — Federalism Comments",c:"lc",o:0,ch:[
+   {l:"K.C. Wheare — called Indian federalism Quasi Federal",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Granville Seward Austin — called it Cooperative Federalism",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Ivor Jennings — called it Federalism with centralising tendency",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"Morris Jones — called it Bargaining Federalism",c:"l2",b:[{t:"KEY",s:"b-key"}]}
+  ]},
+
+  {l:"⚡ Ultra Quick Revision — Top 20 Facts",c:"lr",o:0,ch:[
+   {l:"1. India has LENGTHIEST written constitution in the world",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"2. Original: 395 Articles, 22 Parts, 8 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"3. Present: 448 Articles, 25 Parts, 12 Schedules",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"4. Parliamentary form of government borrowed from UK",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"5. India = Federation with STRONG CENTRE (not purely federal)",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"6. Three tiers: Union + States + Local Bodies",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"7. K.C. Wheare called Indian federalism QUASI FEDERAL",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"8. Residuary List power with Parliament — borrowed from Canada",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"9. Union List: 100 subjects | State List: 61 subjects | Concurrent: 52 subjects",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"10. Schedule 8: Originally 14 languages, now 22 languages",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"11. 92nd CAA 2003 added: Bodo, Dogri, Santhali, Maithili (BDSM)",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"12. 96th CAA 2011: Oriya renamed to Odia",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"13. Classical Languages (original 6): Tamil, Sanskrit, Telugu, Kannada, Malayalam, Odia",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"14. 2024 New Classical Languages: Marathi, Pali, Prakrit, Assamese, Bengali",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"15. Schedule 9: Land reforms, added by 1st CA 1951",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"16. Schedule 10: Anti-Defection, added by 52nd CA 1985",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"17. Schedule 11: Panchayat (73rd CA, 1992, 29 matters) | Schedule 12: Municipality (74th CA, 1992, 18 matters)",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"18. 42nd Amendment 1976 transferred Education, Forest, etc. from State to Concurrent List",c:"l2",b:[{t:"IMP",s:"b-imp"}]},
+   {l:"19. Three organs: Legislature (Make laws), Executive (Carry out), Judiciary (Evaluate)",c:"l2",b:[{t:"KEY",s:"b-key"}]},
+   {l:"20. TEARS OF OLD PM — mnemonic for all 12 Schedules",c:"l2",b:[{t:"TRICK",s:"b-ok"}]}
+  ]},
+
+  {l:"⚠ Commonly Confused Concepts",c:"lc",o:0,ch:[
+   {l:"Original Articles = 395 ≠ Present Articles = 448",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Original Schedules = 8 ≠ Present Schedules = 12",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Union List currently = 100 ≠ originally = 97",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"State List currently = 61 ≠ originally = 66",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Concurrent List currently = 52 ≠ originally = 47",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Schedule 8 Languages originally = 14 ≠ presently = 22",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Schedule 5 (Scheduled Tribes: AP, MP, etc.) ≠ Schedule 6 (Tribal areas: Assam, Tripura, Meghalaya, Mizoram)",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Unitary feature: Single Citizenship ≠ Federal feature: Dual Citizenship (USA has dual)",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"K.C. Wheare = Quasi Federal ≠ Ivor Jennings = Centralising tendency (easy to mix)",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Written constitution = NOT easy to amend ≠ Unwritten (UK) = Easy to amend",c:"l2",b:[{t:"TRAP",s:"b-imp"}]},
+   {l:"Residuary List borrowed from Canada ≠ Parliamentary form borrowed from UK",c:"l2",b:[{t:"TRAP",s:"b-imp"}]}
+  ]},
+
+  {l:"🧠 Mnemonics & Memory Aids",c:"lg",o:0,ch:[
+   {l:"TEARS OF OLD PM → All 12 Schedules in order",c:"l2",b:[{t:"TRICK",s:"b-ok"}],ch:[
+    {l:"T = Territory (Sch 1) | E = Emoluments (Sch 2) | A = Affirmation+Oath (Sch 3) | R = Rajya Sabha (Sch 4)",c:"l3"},
+    {l:"S = Scheduled Area (Sch 5) | O = Other Scheduled Area (Sch 6) | F = Federal Provision/7 Lists (Sch 7)",c:"l3"},
+    {l:"O = Official Language (Sch 8) | L = Land Provision (Sch 9) | D = Defection (Sch 10)",c:"l3"},
+    {l:"P = Panchayat (Sch 11) | M = Municipality (Sch 12)",c:"l3"}
+   ]},
+   {l:"Classical Languages trick: Tu Shuru To Kar Mai Aariya (Oriya) = Tamil, Sanskrit, Telugu, Kannada, Malayalam, Odia",c:"l2",b:[{t:"TRICK",s:"b-ok"}]},
+   {l:"92nd CAA 2003 languages: BDSM = Bodo, Dogri, Santhali, Maithili",c:"l2",b:[{t:"TRICK",s:"b-ok"}]},
+   {l:"Federalism scholars: WJ = Wheare (Quasi), Austin (Cooperative) | Jennings (Central) | Morris (Bargaining)",c:"l2",b:[{t:"TRICK",s:"b-ok"}]},
+   {l:"Union List subjects UP: 97 → 100 (+3) | State List DOWN: 66 → 61 (-5) | Concurrent UP: 47 → 52 (+5)",c:"l2",b:[{t:"TRICK",s:"b-ok"}]},
+   {l:"5 scenarios for Parliament on State list: NP-TRI-S = National emergency, President Rule, Two states ask, Rajya Sabha, International treaty",c:"l2",b:[{t:"TRICK",s:"b-ok"}]},
+   {l:"2024 New Classical Languages: MAP-B = Marathi, Assamese, Pali+Prakrit, Bengali",c:"l2",b:[{t:"TRICK",s:"b-ok"}]}
+  ]}
+
+ ]}
+];
+
+function build(data,ul){
+  data.forEach(d=>{
+    const li=document.createElement('li');
+    li.style.marginBottom='3px';
+    const row=document.createElement('div');
+    row.className='row '+d.c;
+    const arr=document.createElement('span');
+    arr.className='arrow';
+    arr.textContent=d.ch&&d.ch.length?'▶':' ';
+    if(d.o)arr.classList.add('open');
+    const pill=document.createElement('span');
+    pill.className='pill';
+    const txt=document.createElement('span');
+    txt.className='ntext';
+    txt.textContent=d.l;
+    pill.appendChild(txt);
+    if(d.b){d.b.forEach(b=>{const s=document.createElement('span');s.className='badge '+b.s;s.textContent=b.t;pill.appendChild(s);});}
+    row.appendChild(arr);row.appendChild(pill);
+    li.appendChild(row);
+    if(d.ch&&d.ch.length){
+      const sub=document.createElement('ul');
+      sub.className='children'+(d.o?'':' closed');
+      build(d.ch,sub);
+      li.appendChild(sub);
+      row.addEventListener('click',()=>{
+        const cl=sub.classList.contains('closed');
+        sub.classList.toggle('closed',!cl);
+        arr.classList.toggle('open',cl);
+      });
+    }
+    ul.appendChild(li);
+  });
+}
+function setAll(open){
+  document.querySelectorAll('.children').forEach(e=>e.classList.toggle('closed',!open));
+  document.querySelectorAll('.arrow').forEach(a=>{if(a.textContent!=' ')a.classList.toggle('open',open);});
+}
+function search(q){
+  q=q.trim().toLowerCase();
+  const rows=document.querySelectorAll('.row');
+  if(!q){
+    rows.forEach(r=>{r.classList.remove('hl','dim');const t=r.querySelector('.ntext');t.innerHTML=t.textContent;});
+    return;
+  }
+  rows.forEach(r=>{
+    const t=r.querySelector('.ntext');
+    const raw=t.textContent;
+    if(raw.toLowerCase().includes(q)){
+      r.classList.add('hl');r.classList.remove('dim');
+      const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      t.innerHTML=raw.replace(re,'<mark>$1</mark>');
+      let p=r.closest('.children');
+      while(p){p.classList.remove('closed');const prev=p.previousElementSibling;if(prev){const a=prev.querySelector('.arrow');if(a)a.classList.add('open');}p=p.parentElement&&p.parentElement.closest('.children');}
+    } else {
+      r.classList.remove('hl');r.classList.add('dim');t.innerHTML=raw;
+    }
+  });
+}
+build(T,document.getElementById('root'));
+</script>
+</body>
+</html>
