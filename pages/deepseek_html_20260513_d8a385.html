@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Making of Constitution – SSC Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f1a;
+    --surface: #141726;
+    --card: #1a1e30;
+    --border: #252a42;
+    --gold: #f5c842;
+    --orange: #ff7c3a;
+    --blue: #4fa3f7;
+    --green: #3ecf8e;
+    --pink: #f06fa4;
+    --purple: #9b7bf7;
+    --text: #e8ecf5;
+    --muted: #8892a8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    background: linear-gradient(135deg, #1a1030 0%, #0d1a2e 60%, #0d0f1a 100%);
+    border-bottom: 2px solid var(--gold);
+    padding: 40px 24px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(245,200,66,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #0d0f1a;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 6vw, 44px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .header h1 span { color: var(--gold); }
+  .header p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ---- LAYOUT ---- */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 16px 60px;
+  }
+
+  /* ---- SECTION ---- */
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ---- CARDS ---- */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ---- GRID ---- */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  @media(max-width: 600px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  /* ---- TIMELINE ---- */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 6px; top: 4px; bottom: 4px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--orange), var(--blue));
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -25px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--bg);
+  }
+  .tl-year {
+    display: inline-block;
+    background: var(--gold);
+    color: #0d0f1a;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+  }
+  .tl-text { font-size: 14px; color: var(--muted); }
+  .tl-text strong { color: var(--text); }
+
+  /* ---- HIGHLIGHT PILL ---- */
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px 3px 2px 0;
+  }
+  .pill-gold { background: rgba(245,200,66,0.12); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }
+  .pill-blue { background: rgba(79,163,247,0.12); color: var(--blue); border: 1px solid rgba(79,163,247,0.3); }
+  .pill-green { background: rgba(62,207,142,0.12); color: var(--green); border: 1px solid rgba(62,207,142,0.3); }
+  .pill-pink { background: rgba(240,111,164,0.12); color: var(--pink); border: 1px solid rgba(240,111,164,0.3); }
+  .pill-orange { background: rgba(255,124,58,0.12); color: var(--orange); border: 1px solid rgba(255,124,58,0.3); }
+  .pill-purple { background: rgba(155,123,247,0.12); color: var(--purple); border: 1px solid rgba(155,123,247,0.3); }
+
+  /* ---- STAT BOX ---- */
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  /* ---- TABLE ---- */
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th {
+    background: rgba(245,200,66,0.08);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .tbl td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* ---- ALERT / QUOTE BOX ---- */
+  .quote-box {
+    border-left: 3px solid var(--orange);
+    background: rgba(255,124,58,0.06);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    margin: 12px 0;
+  }
+  .quote-box cite {
+    display: block;
+    margin-top: 6px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ---- PERSON CARD ---- */
+  .person-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .person-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .person-role {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .person-role span { color: var(--blue); font-weight: 600; }
+
+  /* ---- BULLET LIST ---- */
+  ul.clean { list-style: none; padding: 0; }
+  ul.clean li {
+    display: flex;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before {
+    content: '›';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  /* ---- IMPORTANT TAG ---- */
+  .imp {
+    background: rgba(245,200,66,0.15);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .color-gold { color: var(--gold); }
+  .color-blue { color: var(--blue); }
+  .color-green { color: var(--green); }
+  .color-orange { color: var(--orange); }
+  .color-pink { color: var(--pink); }
+  .color-purple { color: var(--purple); }
+  strong { color: #fff; }
+  .fs13 { font-size: 13px; }
+
+  .back-link {
+    padding: 16px 16px 0 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .back-link a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="back-link">
+  <p><a href="index.html">← Back to Table of Contents</a></p>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="badge">SSC CGL · CHSL · MTS · NTPC · Group D</div>
+  <h1>Making of the <span>Constitution</span></h1>
+  <p>Parmar SSC Notes · Polity · Complete Revision Sheet</p>
+</div>
+
+<div class="container">
+
+  <!-- ─── SECTION 1: BASICS ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--gold)"></div>
+      Constitution – Basics
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <ul class="clean">
+          <li>Constitution lays out <strong>ideals</strong> that form the basis of the kind of country a nation aspires to be.</li>
+          <li>Tradition of Constitution began in: <strong>USA (1787)</strong></li>
+          <li>Independence of USA: <strong>4th July 1776</strong></li>
+          <li>India's Constitution: <strong>Partly Rigid, Partly Flexible</strong></li>
+          <li>All democratic countries likely have a Constitution — but NOT all countries with a Constitution are democratic.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title color-blue">Other Forms of Government</div>
+        <table class="tbl">
+          <thead><tr><th>Type</th><th>Meaning</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pill pill-pink">Communist</span></td><td>Means of production controlled by govt</td><td>China, North Korea, Cuba, Vietnam, Laos</td></tr>
+            <tr><td><span class="pill pill-gold">Monarchic</span></td><td>Ruled by single person (King/Queen)</td><td>North Korea</td></tr>
+            <tr><td><span class="pill pill-orange">Totalitarian</span></td><td>Total control over citizens' lives</td><td>—</td></tr>
+            <tr><td><span class="pill pill-purple">Oligarchic</span></td><td>Government of a few people</td><td>Iran, Russia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: CONSTITUENT ASSEMBLY TIMELINE ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--blue)"></div>
+      Constituent Assembly – Timeline
+    </div>
+    <div class="card">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">1928</div>
+          <div class="tl-text">Early draft of Indian Constitution — <strong>Nehru Report</strong> — submitted by All Parties Conference at Lucknow, chaired by <strong>Motilal Nehru</strong>.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1934</div>
+          <div class="tl-text"><strong>M. N. Roy</strong> first proposed the idea of a Constituent Assembly for India.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1935</div>
+          <div class="tl-text"><strong>Indian National Congress</strong> officially demanded a Constituent Assembly.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1940 – August Offer</div>
+          <div class="tl-text">Proposed by <strong>Lord Linlithgow</strong> (Viceroy) on 8 Aug 1940 to gain Indian support in WWII. Promised <strong>Dominion Status</strong> after the war. <span class="imp">REJECTED</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1942 – Cripps Proposal</div>
+          <div class="tl-text">Offered Dominion Status + Constituent Assembly to draft new constitution. <span class="imp">REJECTED</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1945 – Wavell Plan</div>
+          <div class="tl-text">Also called <strong>Shimla Conference</strong>. Proposed by <strong>Lord Wavell</strong>. Interim Executive Council with equal representation for Hindus and Muslims. <span class="imp">REJECTED</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">1946 – Cabinet Mission Plan</div>
+          <div class="tl-text"><strong>ACCEPTED</strong> by both Congress and Muslim League → Constituent Assembly was formed based on this plan.<br>
+          Members: <strong>Pethick-Lawrence</strong> (Chairman), <strong>Stafford Cripps</strong>, <strong>A.V. Alexander</strong></div>
+        </div>
+      </div>
+      <div class="quote-box">
+        "Dominion status is dead as a door nail."
+        <cite>— Jawaharlal Nehru (on why the first 3 British proposals were rejected)</cite>
+      </div>
+      <div class="fs13" style="color:var(--muted); margin-top: 8px;">All three plans (August Offer, Cripps, Wavell) were rejected because Congress demanded <strong>Purna Swaraj</strong> while British only offered <strong>Dominion Status</strong>.</div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: CABINET MISSION COMPOSITION ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--green)"></div>
+      Cabinet Mission Plan – Composition (389 Members)
+    </div>
+    <div class="grid-3" style="margin-bottom:12px">
+      <div class="stat-box">
+        <div class="stat-num color-gold">389</div>
+        <div class="stat-label">Total Members</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num color-blue">296</div>
+        <div class="stat-label">Elected (British India)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num color-orange">93</div>
+        <div class="stat-label">Nominated (Princely States)</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="stat-box">
+        <div class="stat-num color-green">292</div>
+        <div class="stat-label">From 11 Governor Provinces</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num color-pink">4</div>
+        <div class="stat-label">Chief Commissioner Provinces<br><span style="font-size:11px;font-weight:400;color:var(--muted)">(Ajmer-Marwar, Coorg, Delhi, Baluchistan)</span></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <ul class="clean">
+        <li>Seats divided among 3 communities: <span class="pill pill-blue">Muslim</span> <span class="pill pill-gold">Sikh</span> <span class="pill pill-green">General</span></li>
+        <li>1 seat per <strong>1 million population</strong></li>
+        <li>Method: <strong>Indirect Elections</strong> → Proportional Representation + Single Transferable Vote</li>
+        <li>Elections held: <strong>July–August 1946</strong></li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-green">Election Results</div>
+      <div class="grid-3">
+        <div class="stat-box" style="padding:10px">
+          <div class="stat-num color-gold" style="font-size:22px">208</div>
+          <div class="stat-label">INC (Congress)</div>
+        </div>
+        <div class="stat-box" style="padding:10px">
+          <div class="stat-num color-orange" style="font-size:22px">73</div>
+          <div class="stat-label">Muslim League</div>
+        </div>
+        <div class="stat-box" style="padding:10px">
+          <div class="stat-num color-muted" style="font-size:22px">15</div>
+          <div class="stat-label">Independents</div>
+        </div>
+      </div>
+      <p style="margin-top:10px; font-size:13px; color:var(--muted)">After Muslim League boycott → Remaining seats: <strong style="color:var(--text)">299 (after Partition)</strong></p>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 4: INTERIM GOVT ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--orange)"></div>
+      Interim Government (2 Sep 1946 – 15 Aug 1947)
+    </div>
+    <div class="card">
+      <ul class="clean">
+        <li><strong>President of Executive Council (Viceroy):</strong> Viscount Wavell (till Feb 1947) → Lord Mountbatten (from Feb 1947)</li>
+        <li><strong>Commander-in-Chief:</strong> Sir Claude Auchinleck</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-orange">Portfolio Assignments</div>
+      <table class="tbl">
+        <thead><tr><th>Portfolio</th><th>Person</th><th>Party</th></tr></thead>
+        <tbody>
+          <tr><td>Vice President + External Affairs</td><td>Jawaharlal Nehru</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Home Affairs, Info & Broadcasting</td><td>Sardar Vallabhbhai Patel</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Agriculture & Food</td><td>Rajendra Prasad</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Defence</td><td>Baldev Singh</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Labour</td><td>Jagjivan Ram</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Education & Arts</td><td>C. Rajagopalachari</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Industries & Supplies</td><td>John Mathai</td><td><span class="pill pill-green">INC</span></td></tr>
+          <tr><td>Finance</td><td>Liaquat Ali Khan</td><td><span class="pill pill-orange">ML</span></td></tr>
+          <tr><td>Commerce</td><td>Ibrahim Ismail Chundrigar</td><td><span class="pill pill-orange">ML</span></td></tr>
+          <tr><td>Health</td><td>Ghazanfar Ali Khan</td><td><span class="pill pill-orange">ML</span></td></tr>
+          <tr><td>Law</td><td>Jogendra Nath Mandal</td><td><span class="pill pill-orange">ML</span></td></tr>
+          <tr><td>Railways, Communication, Post & Air</td><td>Abdur Rab Nishtar</td><td><span class="pill pill-orange">ML</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 5: OBJECTIVE RESOLUTION ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--purple)"></div>
+      Objective Resolution
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title color-purple">Key Dates</div>
+        <ul class="clean">
+          <li><strong>13 Dec 1946:</strong> Objective Resolution <em>presented</em> by Jawaharlal Nehru</li>
+          <li><strong>22 Jan 1947:</strong> Objective Resolution <em>accepted</em> by Constituent Assembly</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title color-gold">Tryst with Destiny</div>
+        <p class="fs13" style="color:var(--muted)">Famous speech by Nehru on <strong style="color:var(--text)">14 Aug 1947</strong> before Constituent Assembly. Referred to Gandhi as:</p>
+        <div class="quote-box" style="margin-top:8px">"The ambition of the greatest man of our generation has been to wipe every tear from every eye."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 6: COMMITTEES ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--pink)"></div>
+      Committees of Constituent Assembly
+      <span class="imp">8 Major + 13 Minor</span>
+    </div>
+    <div class="card">
+      <div class="card-title color-pink">Major Committees</div>
+      <table class="tbl">
+        <thead><tr><th>Chairman</th><th>Committee(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Jawaharlal Nehru</td><td>Union Power Committee · Union Constitution Committee · State Committee</td></tr>
+          <tr><td>Sardar Patel</td><td>Provincial Constitution Committee · Advisory Committee on Fundamental Rights, Minorities, Tribal & Excluded Area</td></tr>
+          <tr><td>Rajendra Prasad</td><td>Rules of Procedure Committee · Steering Committee</td></tr>
+          <tr><td><strong class="color-gold">B. R. Ambedkar</strong></td><td><strong>Drafting Committee</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-blue">Minor Committees (13)</div>
+      <table class="tbl">
+        <thead><tr><th>#</th><th>Committee</th><th>Chairman</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Finance and Staff Committee</td><td>Dr. Rajendra Prasad</td></tr>
+          <tr><td>2</td><td>Ad-hoc Committee on the National Flag</td><td>Dr. Rajendra Prasad</td></tr>
+          <tr><td>3</td><td>Credential Committee</td><td>Alladi Krishnaswamy Ayyar</td></tr>
+          <tr><td>4</td><td>House Committee</td><td>B. Pattabhi Sitaramayya</td></tr>
+          <tr><td>5</td><td>Committee on Chief Commissioners Provinces</td><td>B. Pattabhi Sitaramayya</td></tr>
+          <tr><td>6</td><td>Order of Business Committee</td><td>Dr. K. M. Munshi</td></tr>
+          <tr><td>7</td><td>Committee on Functions of the Constituent Assembly</td><td>G. V. Mavalankar</td></tr>
+          <tr><td>8</td><td>Ad-hoc Committee on the Supreme Court</td><td>S. Varadachariar</td></tr>
+          <tr><td>9</td><td>Ad-hoc Committee on Citizenship</td><td>S. Varadachariar</td></tr>
+          <tr><td>10</td><td>Expert Committee on Financial Provisions of Union Constitution</td><td>Nalini Ranjan Sarkar</td></tr>
+          <tr><td>11</td><td>Linguistic Provinces Committee</td><td>S. K. Dhar</td></tr>
+          <tr><td>12</td><td>Special Committee to Examine the Draft Constitution</td><td>J. L. Nehru</td></tr>
+          <tr><td>13</td><td>Press Gallery Committee</td><td>Usha Nath Sen</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 7: DRAFTING COMMITTEE ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--gold)"></div>
+      Drafting Committee
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title color-gold">Key Facts</div>
+        <ul class="clean">
+          <li>Set up: <strong>29 August 1947</strong></li>
+          <li>Total members: <strong>7</strong></li>
+          <li>Chairman: <strong>Dr. B. R. Ambedkar</strong> ("Modern Manuh / Modern Man")</li>
+          <li>Ambedkar elected from <strong>Bengal (Jul 1946)</strong>; after partition → from <strong>Bombay Presidency</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title color-blue">Other 6 Members</div>
+        <ol style="padding-left:18px; font-size:14px; line-height:2">
+          <li>Alladi Krishnaswami Ayyar</li>
+          <li>N. Gopalaswami Ayyangar</li>
+          <li>Muhammed Saadulah</li>
+          <li>B. L. Mitter → replaced by <strong>N. Madhav Rau</strong></li>
+          <li>D. P. Khaitan → replaced by <strong>T. T. Krishnamachari</strong></li>
+          <li>K. M. Munshi</li>
+        </ol>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-orange">Draft Readings</div>
+      <table class="tbl">
+        <thead><tr><th>Event</th><th>Date / Duration</th></tr></thead>
+        <tbody>
+          <tr><td>First Draft Published</td><td>21 Feb 1948 (8 months for public discussion)</td></tr>
+          <tr><td>Final Draft presented by Ambedkar</td><td>4 November 1948</td></tr>
+          <tr><td>1st Reading</td><td>5 days (4 Nov 1948 – 9 Nov 1948)</td></tr>
+          <tr><td>2nd Reading</td><td>10 months 3 days (15 Nov 1948 – 17 Oct 1949)</td></tr>
+          <tr><td>3rd Reading</td><td>Completed 26 Nov 1949</td></tr>
+          <tr><td>Members on 1st Day</td><td>211 members present</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 8: IMPORTANT SESSIONS ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--green)"></div>
+      Important Sessions & Key Dates
+    </div>
+    <div class="grid-4" style="margin-bottom:12px">
+      <div class="stat-box"><div class="stat-num color-gold">11</div><div class="stat-label">Total Sessions</div></div>
+      <div class="stat-box"><div class="stat-num color-blue">165</div><div class="stat-label">Total Days</div></div>
+      <div class="stat-box"><div class="stat-num color-green" style="font-size:18px">2y 11m 18d</div><div class="stat-label">Time to Draft</div></div>
+      <div class="stat-box"><div class="stat-num color-orange">₹64L</div><div class="stat-label">Budget</div></div>
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Event</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr><td>1st Session</td><td>9 – 23 December 1946</td></tr>
+          <tr><td>10th Session</td><td>6 – 17 October 1949</td></tr>
+          <tr><td>11th Session (Last)</td><td>14 – 26 November 1949</td></tr>
+          <tr><td><strong>Constitution Adopted</strong> <span class="imp">Constitution Day</span></td><td><strong>26 November 1949</strong></td></tr>
+          <tr><td><strong>Constitution Enforced / Commenced</strong> <span class="imp">Republic Day</span></td><td><strong>26 January 1950</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="quote-box" style="margin-top:12px; border-left-color: var(--green)">
+        Why 26 January? → Same date in <strong>1930</strong>, Purna Swaraj Day was celebrated following the <strong>Lahore Session (1929)</strong>.
+      </div>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-blue">Provisions Imposed on 26 Nov 1949 (before full enforcement)</div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:4px">
+        <span class="pill pill-gold">Citizenship (Art. 5–9)</span>
+        <span class="pill pill-blue">Elections (Art. 324–329)</span>
+        <span class="pill pill-green">Provisional Parliament</span>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="card-title color-gold">Original Constitution Structure</div>
+      <div class="grid-4">
+        <div class="stat-box" style="padding:10px"><div class="stat-num color-gold" style="font-size:22px">395</div><div class="stat-label">Articles</div></div>
+        <div class="stat-box" style="padding:10px"><div class="stat-num color-blue" style="font-size:22px">8</div><div class="stat-label">Schedules</div></div>
+        <div class="stat-box" style="padding:10px"><div class="stat-num color-green" style="font-size:22px">22</div><div class="stat-label">Parts</div></div>
+        <div class="stat-box" style="padding:10px"><div class="stat-num color-orange" style="font-size:22px">1</div><div class="stat-label">Preamble</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 9: FUNCTIONS & WORKING ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--purple)"></div>
+      Functions & Working of Constituent Assembly
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title color-purple">Functions</div>
+        <ul class="clean">
+          <li>Law-making body (legislate) → <strong>G. V. Mavalankar</strong> (1st Speaker, Lok Sabha)</li>
+          <li>Constitution-making body</li>
+          <li>Functioned as <strong>First Parliament of India</strong></li>
+          <li>Adopted National Flag → <strong>22 July 1947</strong></li>
+          <li>National Anthem: "Jana Gana Mana" (Rabindranath Tagore) → <strong>24 Jan 1950</strong></li>
+          <li>National Song: "Vande Mataram" (Bankim Chandra Chatterjee) → <strong>24 Jan 1950</strong></li>
+          <li>Ratified India's Commonwealth membership → <strong>May 1949</strong></li>
+          <li>Elected <strong>Dr. Rajendra Prasad</strong> as 1st President → <strong>26 Jan 1950</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title color-blue">Working</div>
+        <ul class="clean">
+          <li>1st Meeting: <strong>9 Dec 1946</strong> (211 members present)</li>
+          <li>Temporary President: <strong>Dr. Sachchidanand Sinha</strong></li>
+          <li>Permanent President: <strong>Dr. Rajendra Prasad</strong></li>
+          <li>Vice President: <strong>H. C. Mukherjee</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 10: SIGNIFICANT FACTS ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--orange)"></div>
+      Significant Facts (High Exam Frequency)
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Fact</th><th>Answer</th></tr></thead>
+        <tbody>
+          <tr><td>Legal / Constitutional Advisor</td><td><strong>B. N. Rau</strong></td></tr>
+          <tr><td>Chief Draftsman</td><td><strong>S. N. Mukherjee</strong></td></tr>
+          <tr><td>Secretary of Constituent Assembly</td><td><strong>H. V. Iyengar</strong></td></tr>
+          <tr><td>Members who signed Constitution</td><td><strong>284</strong> (incl. 15 female members)</td></tr>
+          <tr><td>India's Constitution is</td><td>World's <strong>largest written constitution</strong>; symbol → <strong>Elephant</strong></td></tr>
+          <tr><td>Language of Constitution</td><td><strong>English</strong></td></tr>
+          <tr><td>English Calligrapher</td><td><strong>Prem Behari Narain Raizada</strong></td></tr>
+          <tr><td>Hindi Calligrapher</td><td><strong>Vasant Krishna Vaidya</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 11: IMPORTANT WOMEN ─── -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--pink)"></div>
+      Important Female Members of Constituent Assembly
+    </div>
+    <div class="grid-3">
+      <div class="person-card">
+        <div class="person-name">Rajkumari Amrit Kaur</div>
+        <div class="person-role">1st <span>Health Minister</span> of India</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Sucheta Kriplani</div>
+        <div class="person-role">1st female <span>Chief Minister of Uttar Pradesh</span></div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Sarojini Naidu</div>
+        <div class="person-role">1st <span>Governor of Uttar Pradesh</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── QUICK REVISION ─── -->
+  <hr class="divider">
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background:var(--gold)"></div>
+      Quick Revision Cheatsheet
+    </div>
+    <div class="card">
+      <table class="tbl">
+        <thead><tr><th>Who</th><th>Role / Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>M. N. Roy</td><td>First proposed Constituent Assembly (1934)</td></tr>
+          <tr><td>Motilal Nehru</td><td>Chaired All Parties Conference; Nehru Report (1928)</td></tr>
+          <tr><td>Dr. B. R. Ambedkar</td><td>Chairman, Drafting Committee; "Father of Indian Constitution"</td></tr>
+          <tr><td>Dr. Rajendra Prasad</td><td>Permanent President of CA; 1st President of India</td></tr>
+          <tr><td>Dr. Sachchidanand Sinha</td><td>Temporary/Provisional President of CA</td></tr>
+          <tr><td>H. C. Mukherjee</td><td>Vice President of CA</td></tr>
+          <tr><td>Jawaharlal Nehru</td><td>Presented Objective Resolution; "Tryst with Destiny" speech</td></tr>
+          <tr><td>G. V. Mavalankar</td><td>First Speaker of Lok Sabha; CA law-making function</td></tr>
+          <tr><td>B. N. Rau</td><td>Legal/Constitutional Advisor</td></tr>
+          <tr><td>S. N. Mukherjee</td><td>Chief Draftsman</td></tr>
+          <tr><td>H. V. Iyengar</td><td>Secretary of Constituent Assembly</td></tr>
+          <tr><td>Prem Behari Narain Raizada</td><td>Calligrapher (English version)</td></tr>
+          <tr><td>Vasant Krishna Vaidya</td><td>Calligrapher (Hindi version)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="text-align:center; color:var(--muted); font-size:12px; padding-top:12px">
+    Parmar SSC Notes · Making of Constitution · © For Exam Use Only
+  </div>
+
+</div>
+</body>
+</html>
